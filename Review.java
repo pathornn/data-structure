@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class review {
+public class Review {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         
@@ -20,4 +20,5 @@ public class review {
         }
         System.out.printf("%.2f", sum/count);
     }
+
 }
