@@ -100,9 +100,11 @@ public class BST {
         boolean found = preorderSearchRec(root, num);
         if(found){
             System.out.print(trav + ") Found!");
+            trav="";
             return true;
         }else{
             System.out.print(trav.substring(0, trav.length() - 1) + ") Not Found!");
+            trav="";
             return false;
         }
     }
@@ -167,4 +169,5 @@ public class BST {
         }
     }
 }
+
 
