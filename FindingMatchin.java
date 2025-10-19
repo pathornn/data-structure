@@ -34,19 +34,19 @@ public class FindingMatchin {
         System.out.println("--- Hash Table [" + n + "] ---");
         int[] hash = new int[2*n];
         for(int i=0; i<n*2; i++){
-            hash[i] = -1;
+            hash[i] = -1; //ทำให้ value hash ทุกตัวเป็นค่าว่าง
         }
 
-        for(int i=0; i<n*2; i++){
-            for(int ii=0; ii<n; ii++){
-                if(i == num[ii]%(2*n) && hash[num[ii]%(2*n)] == -1){
-                    hash[num[ii]%(2*n)] = num[ii];
-                    System.out.print(num[ii]%(2*n) + ":" + num[ii] + " ");
+        for(int i=0; i<n*2; i++){   //รันจำนวน key 
+            for(int ii=0; ii<n; ii++){  //รันจำนวน n ใน num
+                if(i == num[ii]%(2*n) && hash[num[ii]%(2*n)] == -1){    //ค่า key = ค่า num%(2n) และ ค่าใน hash ต้องว่าง
+                    hash[i] = num[ii];  //ค่าใน hash = ค่า num
+                    System.out.print(i + ":" + num[ii] + " ");
                 }else if(i == num[ii]%(2*n)){
                     for(int iii=0; iii<n; iii++){
-                        if((hash[(num[ii]%(2*n) + iii)%(2*n)]) == -1){
-                        hash[(num[ii]%(2*n) + iii)%(2*n)] = num[ii];
-                        System.out.print((num[ii]%(2*n) + iii)%(2*n) + ":" + num[ii] + "* ");
+                        if((hash[(i + iii)%(2*n)]) == -1){
+                        hash[(i + iii)%(2*n)] = num[ii];
+                        System.out.print((i + iii)%(2*n) + ":" + num[ii] + "* ");
                         break;
                         }
                     }
@@ -92,6 +92,5 @@ public class FindingMatchin {
                 }
             }
         }
-
     }
 }
